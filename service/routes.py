@@ -34,6 +34,7 @@ def index():
         status.HTTP_200_OK,
     )
 
+
 @app.route("/accounts/<int:account_id>", methods=["GET"])
 def get_account(account_id):
     account = Account.find(account_id)
@@ -168,4 +169,3 @@ def check_content_type(media_type):
         status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
         f"Content-Type must be {media_type}",
     )
- 
